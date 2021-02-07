@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import net.bytebuddy.ByteBuddy;
+import net.bytebuddy.ClassFileVersion;
 import net.bytebuddy.android.AndroidClassLoadingStrategy;
 import net.bytebuddy.dynamic.loading.ClassLoadingStrategy;
 import net.bytebuddy.implementation.FixedValue;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 "generated",
                 Context.MODE_PRIVATE));
 
-        Class<?> dynamicType = new ByteBuddy()
+        Class<?> dynamicType = new ByteBuddy(ClassFileVersion.JAVA_V7)
                 .subclass(Object.class)
                 .method(ElementMatchers.named("toString"))
                 .intercept(FixedValue.value("Hello World!"))

@@ -15,6 +15,9 @@ repositories {
 
 dependencies {
     implementation 'org.ow2.asm:asm:9.0'
-    implementation 'org.ow2.asm:asm-commons:9.0'
+    implementation('org.ow2.asm:asm-commons:9.0') {
+        exclude group:'org.ow2.asm', module:'asm-analysis'
+        exclude group:'org.ow2.asm', module:'asm-tree'
+    }
     compileOnly 'com.google.code.findbugs:findbugs-annotations:3.0.1'
 }
