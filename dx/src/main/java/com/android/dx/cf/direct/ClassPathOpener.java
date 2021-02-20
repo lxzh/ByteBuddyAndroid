@@ -46,7 +46,7 @@ public class ClassPathOpener {
      * package.
      */
     private final boolean sort;
-    private FileNameFilter filter;
+    private final FileNameFilter filter;
 
     /**
      * Callback interface for {@code ClassOpener}.

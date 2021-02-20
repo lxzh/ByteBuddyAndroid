@@ -64,7 +64,7 @@ public final class Form10t extends InsnFormat {
         }
 
         TargetInsn ti = (TargetInsn) insn;
-        return ti.hasTargetOffset() ? branchFits(ti) : true;
+        return !ti.hasTargetOffset() || branchFits(ti);
     }
 
     /** {@inheritDoc} */

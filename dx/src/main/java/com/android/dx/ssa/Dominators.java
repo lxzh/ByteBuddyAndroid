@@ -56,7 +56,7 @@ public final class Dominators {
     private final ArrayList<SsaBasicBlock> vertex;
 
     /** {@code non-null;} the raw dominator info */
-    private final DomFront.DomInfo domInfos[];
+    private final DomFront.DomInfo[] domInfos;
 
     /**
      * Constructs an instance.
@@ -89,14 +89,6 @@ public final class Dominators {
 
         result.run();
         return result;
-    }
-
-    private BitSet getSuccs(SsaBasicBlock block) {
-        if (postdom) {
-            return block.getPredecessors();
-        } else {
-            return block.getSuccessors();
-        }
     }
 
     private BitSet getPreds(SsaBasicBlock block) {

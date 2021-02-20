@@ -155,28 +155,28 @@ public final class ValueEncoder {
             }
             case VALUE_STRING: {
                 int index = file.getStringIds().indexOf((CstString) cst);
-                EncodedValueCodec.writeUnsignedIntegralValue(out, type, (long) index);
+                EncodedValueCodec.writeUnsignedIntegralValue(out, type, index);
                 break;
             }
             case VALUE_TYPE: {
                 int index = file.getTypeIds().indexOf((CstType) cst);
-                EncodedValueCodec.writeUnsignedIntegralValue(out, type, (long) index);
+                EncodedValueCodec.writeUnsignedIntegralValue(out, type, index);
                 break;
             }
             case VALUE_FIELD: {
                 int index = file.getFieldIds().indexOf((CstFieldRef) cst);
-                EncodedValueCodec.writeUnsignedIntegralValue(out, type, (long) index);
+                EncodedValueCodec.writeUnsignedIntegralValue(out, type, index);
                 break;
             }
             case VALUE_METHOD: {
                 int index = file.getMethodIds().indexOf((CstMethodRef) cst);
-                EncodedValueCodec.writeUnsignedIntegralValue(out, type, (long) index);
+                EncodedValueCodec.writeUnsignedIntegralValue(out, type, index);
                 break;
             }
             case VALUE_ENUM: {
                 CstFieldRef fieldRef = ((CstEnumRef) cst).getFieldRef();
                 int index = file.getFieldIds().indexOf(fieldRef);
-                EncodedValueCodec.writeUnsignedIntegralValue(out, type, (long) index);
+                EncodedValueCodec.writeUnsignedIntegralValue(out, type, index);
                 break;
             }
             case VALUE_ARRAY: {
@@ -269,7 +269,7 @@ public final class ValueEncoder {
      */
     public void writeArray(CstArray array, boolean topLevel) {
         boolean annotates = topLevel && out.annotates();
-        CstArray.List list = ((CstArray) array).getList();
+        CstArray.List list = array.getList();
         int size = list.size();
 
         if (annotates) {

@@ -18,6 +18,7 @@ package com.android.dex;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 /**
@@ -172,7 +173,7 @@ public final class TableOfContents {
     }
 
     public void writeHeader(Dex.Section out, int api) throws IOException {
-        out.write(DexFormat.apiToMagic(api).getBytes("UTF-8"));
+        out.write(DexFormat.apiToMagic(api).getBytes(StandardCharsets.UTF_8));
         out.writeInt(checksum);
         out.write(signature);
         out.writeInt(fileSize);

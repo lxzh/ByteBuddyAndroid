@@ -36,12 +36,12 @@ public interface Machine {
      *
      * @return {@code non-null;} the method prototype
      */
-    public Prototype getPrototype();
+    Prototype getPrototype();
 
     /**
      * Clears the regular and auxiliary arguments area.
      */
-    public void clearArgs();
+    void clearArgs();
 
     /**
      * Pops the given number of values from the stack (of either category),
@@ -51,7 +51,7 @@ public interface Machine {
      * @param frame {@code non-null;} frame to operate on
      * @param count {@code >= 0;} number of values to pop
      */
-    public void popArgs(Frame frame, int count);
+    void popArgs(Frame frame, int count);
 
     /**
      * Pops values from the stack of the types indicated by the given
@@ -64,7 +64,7 @@ public interface Machine {
      * @param frame {@code non-null;} frame to operate on
      * @param prototype {@code non-null;} prototype indicating arguments to pop
      */
-    public void popArgs(Frame frame, Prototype prototype);
+    void popArgs(Frame frame, Prototype prototype);
 
     /**
      * Pops a value from the stack of the indicated type, and store it
@@ -74,7 +74,7 @@ public interface Machine {
      * @param frame {@code non-null;} frame to operate on
      * @param type {@code non-null;} type of the argument
      */
-    public void popArgs(Frame frame, Type type);
+    void popArgs(Frame frame, Type type);
 
     /**
      * Pops values from the stack of the indicated types (popped in
@@ -87,7 +87,7 @@ public interface Machine {
      * @param type1 {@code non-null;} type of the first argument
      * @param type2 {@code non-null;} type of the second argument
      */
-    public void popArgs(Frame frame, Type type1, Type type2);
+    void popArgs(Frame frame, Type type1, Type type2);
 
     /**
      * Pops values from the stack of the indicated types (popped in
@@ -101,7 +101,7 @@ public interface Machine {
      * @param type2 {@code non-null;} type of the second argument
      * @param type3 {@code non-null;} type of the third argument
      */
-    public void popArgs(Frame frame, Type type1, Type type2, Type type3);
+    void popArgs(Frame frame, Type type1, Type type2, Type type3);
 
     /**
      * Loads the local variable with the given index as the sole argument in
@@ -110,7 +110,7 @@ public interface Machine {
      * @param frame {@code non-null;} frame to operate on
      * @param idx {@code >= 0;} the local variable index
      */
-    public void localArg(Frame frame, int idx);
+    void localArg(Frame frame, int idx);
 
     /**
      * Used to specify if a loaded local variable has info in the local
@@ -118,7 +118,7 @@ public interface Machine {
      *
      * @param local {@code true} if local arg has info in local variable table
      */
-    public void localInfo(boolean local);
+    void localInfo(boolean local);
 
     /**
      * Indicates that the salient type of this operation is as
@@ -130,7 +130,7 @@ public interface Machine {
      *
      * @param type {@code non-null;} the salient type of the upcoming operation
      */
-    public void auxType(Type type);
+    void auxType(Type type);
 
     /**
      * Indicates that there is an auxiliary (inline, not stack)
@@ -151,7 +151,7 @@ public interface Machine {
      *
      * @param value the argument value
      */
-    public void auxIntArg(int value);
+    void auxIntArg(int value);
 
     /**
      * Indicates that there is an auxiliary (inline, not stack) object
@@ -163,7 +163,7 @@ public interface Machine {
      * @param cst {@code non-null;} the constant containing / referencing
      * the value
      */
-    public void auxCstArg(Constant cst);
+    void auxCstArg(Constant cst);
 
     /**
      * Indicates that there is an auxiliary (inline, not stack) argument
@@ -171,7 +171,7 @@ public interface Machine {
      *
      * @param target the argument value
      */
-    public void auxTargetArg(int target);
+    void auxTargetArg(int target);
 
     /**
      * Indicates that there is an auxiliary (inline, not stack) argument
@@ -183,7 +183,7 @@ public interface Machine {
      * @param cases {@code non-null;} the list of key-target pairs, plus the default
      * target
      */
-    public void auxSwitchArg(SwitchList cases);
+    void auxSwitchArg(SwitchList cases);
 
     /**
      * Indicates that there is an auxiliary (inline, not stack) argument
@@ -192,7 +192,7 @@ public interface Machine {
      * @param initValues {@code non-null;} the list of constant values to initialize
      * the array
      */
-    public void auxInitValues(ArrayList<Constant> initValues);
+    void auxInitValues(ArrayList<Constant> initValues);
 
     /**
      * Indicates that the target of this operation is the given local.
@@ -201,7 +201,7 @@ public interface Machine {
      * @param type {@code non-null;} the type of the local
      * @param local {@code null-ok;} the name and signature of the local, if known
      */
-    public void localTarget(int idx, Type type, LocalItem local);
+    void localTarget(int idx, Type type, LocalItem local);
 
     /**
      * "Runs" the indicated opcode in an appropriate way, using the arguments
@@ -212,5 +212,5 @@ public interface Machine {
      * run
      * @param opcode {@code >= 0;} the opcode to run
      */
-    public void run(Frame frame, int offset, int opcode);
+    void run(Frame frame, int offset, int opcode);
 }

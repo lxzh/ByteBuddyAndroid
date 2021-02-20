@@ -43,7 +43,7 @@ import java.util.zip.Adler32;
  */
 public final class DexFile {
     /** options controlling the creation of the file */
-    private DexOptions dexOptions;
+    private final DexOptions dexOptions;
 
     /** {@code non-null;} word data section */
     private final MixedItemSection wordData;

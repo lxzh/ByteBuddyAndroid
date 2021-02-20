@@ -28,14 +28,14 @@ public interface MethodList {
      *
      * @return {@code true} iff this instance is somehow mutable
      */
-    public boolean isMutable();
+    boolean isMutable();
 
     /**
      * Get the number of methods in the list.
      *
      * @return the size
      */
-    public int size();
+    int size();
 
     /**
      * Get the {@code n}th method.
@@ -43,5 +43,5 @@ public interface MethodList {
      * @param n {@code n >= 0, n < size();} which method
      * @return {@code non-null;} the method in question
      */
-    public Method get(int n);
+    Method get(int n);
 }

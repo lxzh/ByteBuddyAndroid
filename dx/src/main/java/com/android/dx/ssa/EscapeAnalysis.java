@@ -97,11 +97,11 @@ public class EscapeAnalysis {
     }
 
     /** method we're processing */
-    private SsaMethod ssaMeth;
+    private final SsaMethod ssaMeth;
     /** ssaMeth.getRegCount() */
-    private int regCount;
+    private final int regCount;
     /** Lattice values for each object register group */
-    private ArrayList<EscapeSet> latticeValues;
+    private final ArrayList<EscapeSet> latticeValues;
 
     /**
      * Constructs an instance.

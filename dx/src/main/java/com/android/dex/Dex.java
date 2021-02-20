@@ -784,7 +784,7 @@ public final class Dex {
     private final class ClassDefIterable implements Iterable<ClassDef> {
         public Iterator<ClassDef> iterator() {
             return !tableOfContents.classDefs.exists()
-               ? Collections.<ClassDef>emptySet().iterator()
+               ? Collections.emptyIterator()
                : new ClassDefIterator();
         }
     }

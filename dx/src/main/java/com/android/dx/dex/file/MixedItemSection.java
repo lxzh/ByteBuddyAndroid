@@ -38,7 +38,7 @@ import java.util.TreeMap;
  * have a larger alignment requirement than the alignment of this instance.
  */
 public final class MixedItemSection extends Section {
-    static enum SortType {
+    enum SortType {
         /** no sorting */
         NONE,
 
@@ -46,8 +46,8 @@ public final class MixedItemSection extends Section {
         TYPE,
 
         /** sort in class-major order, with instances sorted per-class */
-        INSTANCE;
-    };
+        INSTANCE
+    }
 
     /** {@code non-null;} sorter which sorts instances by type */
     private static final Comparator<OffsettedItem> TYPE_SORTER =

@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
                 builder.append("\tat " + traceElement);
                 builder.append("\n");
             }
-            Log.i(TAG, builder.toString());
+//            Log.i(TAG, builder.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }

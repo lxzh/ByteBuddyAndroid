@@ -30,5 +30,5 @@ public interface Method
      *
      * @return {@code non-null;} the effective method descriptor
      */
-    public Prototype getEffectiveDescriptor();
+    Prototype getEffectiveDescriptor();
 }

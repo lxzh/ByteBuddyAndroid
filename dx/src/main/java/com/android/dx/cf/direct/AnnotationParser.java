@@ -421,7 +421,7 @@ public final class AnnotationParser {
      */
     private Constant parseConstant() throws IOException {
         int constValueIndex = input.readUnsignedShort();
-        Constant value = (Constant) pool.get(constValueIndex);
+        Constant value = pool.get(constValueIndex);
 
         if (observer != null) {
             String human = (value instanceof CstString)

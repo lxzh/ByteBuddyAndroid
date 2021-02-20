@@ -185,10 +185,10 @@ public final class Ropper {
     private static class ExceptionHandlerSetup {
         /**
          * {@code non-null;} The caught type. */
-        private Type caughtType;
+        private final Type caughtType;
         /**
          * {@code >= 0;} The label of the exception setup block. */
-        private int label;
+        private final int label;
 
         /**
          * Constructs instance.
@@ -222,11 +222,11 @@ public final class Ropper {
      */
     private class Subroutine {
         /** list of all blocks that jsr to this subroutine */
-        private BitSet callerBlocks;
+        private final BitSet callerBlocks;
         /** List of all blocks that return from this subroutine */
-        private BitSet retBlocks;
+        private final BitSet retBlocks;
         /** first block in this subroutine */
-        private int startBlock;
+        private final int startBlock;
 
         /**
          * Constructs instance.

@@ -389,10 +389,10 @@ public final class RegisterSpecList
     }
 
     private static class Expander {
-      private BitSet compatRegs;
-      private RegisterSpecList regSpecList;
+      private final BitSet compatRegs;
+      private final RegisterSpecList regSpecList;
       private int base;
-      private RegisterSpecList result;
+      private final RegisterSpecList result;
       private boolean duplicateFirst;
 
       private Expander(RegisterSpecList regSpecList, BitSet compatRegs, int base,
@@ -409,7 +409,7 @@ public final class RegisterSpecList
       }
 
       private void expandRegister(int regIdx, RegisterSpec registerToExpand) {
-        boolean replace = (compatRegs == null) ? true : !compatRegs.get(regIdx);
+        boolean replace = (compatRegs == null) || !compatRegs.get(regIdx);
         RegisterSpec expandedReg;
 
         if (replace) {

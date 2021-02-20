@@ -17,6 +17,7 @@
 package com.android.dx.rop.type;
 
 import com.android.dx.command.dexer.Main;
+
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 

@@ -63,13 +63,9 @@ public final class Form31t extends InsnFormat {
     public boolean isCompatible(DalvInsn insn) {
         RegisterSpecList regs = insn.getRegisters();
 
-        if (!((insn instanceof TargetInsn) &&
-              (regs.size() == 1) &&
-              unsignedFitsInByte(regs.get(0).getReg()))) {
-            return false;
-        }
-
-        return true;
+        return (insn instanceof TargetInsn) &&
+                (regs.size() == 1) &&
+                unsignedFitsInByte(regs.get(0).getReg());
     }
 
     /** {@inheritDoc} */

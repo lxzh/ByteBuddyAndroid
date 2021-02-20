@@ -25,7 +25,7 @@ public interface Attribute {
      *
      * @return {@code non-null;} the name
      */
-    public String getName();
+    String getName();
 
     /**
      * Get the total length of the attribute in bytes, including the
@@ -34,5 +34,5 @@ public interface Attribute {
      *
      * @return {@code >= 6;} the total length, in bytes
      */
-    public int byteLength();
+    int byteLength();
 }

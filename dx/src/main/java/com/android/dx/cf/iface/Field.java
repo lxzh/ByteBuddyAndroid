@@ -31,5 +31,5 @@ public interface Field
      * @return {@code null-ok;} the constant value, or {@code null} if this
      * field isn't a constant
      */
-    public TypedConstant getConstantValue();
+    TypedConstant getConstantValue();
 }

@@ -442,13 +442,9 @@ public class DirectClassFile implements ClassFile {
              * MIN_MAJOR == MAX_MAJOR.
              */
             if (majorVersion == CLASS_FILE_MAX_MAJOR_VERSION) {
-                if (minorVersion <= CLASS_FILE_MAX_MINOR_VERSION) {
-                    return true;
-                }
-            } else if (majorVersion < CLASS_FILE_MAX_MAJOR_VERSION &&
-                       majorVersion >= CLASS_FILE_MIN_MAJOR_VERSION) {
-                return true;
-            }
+                return minorVersion <= CLASS_FILE_MAX_MINOR_VERSION;
+            } else return majorVersion < CLASS_FILE_MAX_MAJOR_VERSION &&
+                    majorVersion >= CLASS_FILE_MIN_MAJOR_VERSION;
         }
 
         return false;

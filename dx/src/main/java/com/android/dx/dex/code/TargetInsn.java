@@ -24,7 +24,7 @@ import com.android.dx.rop.code.SourcePosition;
  */
 public final class TargetInsn extends FixedSizeInsn {
     /** {@code non-null;} the branch target */
-    private CodeAddress target;
+    private final CodeAddress target;
 
     /**
      * Constructs an instance. The output address of this instance is initially

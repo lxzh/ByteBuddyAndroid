@@ -48,7 +48,7 @@ public final class SsaBasicBlock {
         new LabelComparator();
 
     /** {@code non-null;} insn list associated with this instance */
-    private ArrayList<SsaInsn> insns;
+    private final ArrayList<SsaInsn> insns;
 
     /** {@code non-null;} predecessor set (by block list index) */
     private BitSet predecessors;
@@ -69,13 +69,13 @@ public final class SsaBasicBlock {
     private int primarySuccessor = -1;
 
     /** label of block in rop form */
-    private int ropLabel;
+    private final int ropLabel;
 
     /** {@code non-null;} method we belong to */
-    private SsaMethod parent;
+    private final SsaMethod parent;
 
     /** our index into parent.getBlock() */
-    private int index;
+    private final int index;
 
     /** list of dom children */
     private final ArrayList<SsaBasicBlock> domChildren;
@@ -671,7 +671,7 @@ public final class SsaBasicBlock {
         int category = rs.getCategory();
 
         return regsUsed.get(reg)
-                || (category == 2 ? regsUsed.get(reg + 1) : false);
+                || (category == 2 && regsUsed.get(reg + 1));
     }
 
     /**

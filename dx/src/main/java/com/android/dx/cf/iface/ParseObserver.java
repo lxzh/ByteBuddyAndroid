@@ -29,7 +29,7 @@ public interface ParseObserver {
      *
      * @param indentDelta the amount to change indentation
      */
-    public void changeIndent(int indentDelta);
+    void changeIndent(int indentDelta);
 
     /**
      * Indicate that a particular member is now being parsed.
@@ -40,8 +40,8 @@ public interface ParseObserver {
      * @param name {@code non-null;} name of the member
      * @param descriptor {@code non-null;} descriptor of the member
      */
-    public void startParsingMember(ByteArray bytes, int offset, String name,
-                                   String descriptor);
+    void startParsingMember(ByteArray bytes, int offset, String name,
+                            String descriptor);
 
     /**
      * Indicate that a particular member is no longer being parsed.
@@ -53,8 +53,8 @@ public interface ParseObserver {
      * @param descriptor {@code non-null;} descriptor of the member
      * @param member {@code non-null;} the actual member that was parsed
      */
-    public void endParsingMember(ByteArray bytes, int offset, String name,
-                                 String descriptor, Member member);
+    void endParsingMember(ByteArray bytes, int offset, String name,
+                          String descriptor, Member member);
 
     /**
      * Indicate that some parsing happened.
@@ -64,5 +64,5 @@ public interface ParseObserver {
      * @param len number of bytes parsed
      * @param human {@code non-null;} human form for what was parsed
      */
-    public void parsed(ByteArray bytes, int offset, int len, String human);
+    void parsed(ByteArray bytes, int offset, int len, String human);
 }

@@ -81,7 +81,7 @@ public final class PositionList extends FixedSizeList {
             DalvInsn insn = insns.get(i);
 
             if (insn instanceof CodeAddress) {
-                lastWasTarget = true;;
+                lastWasTarget = true;
                 continue;
             }
 

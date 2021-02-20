@@ -70,7 +70,7 @@ public abstract class BaseMachine implements Machine {
     private RegisterSpec localTarget;
 
     /** {@code non-null;} results */
-    private TypeBearer[] results;
+    private final TypeBearer[] results;
 
     /**
      * {@code >= -1;} count of the results, or {@code -1} if no results

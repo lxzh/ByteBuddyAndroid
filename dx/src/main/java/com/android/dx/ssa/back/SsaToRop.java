@@ -345,35 +345,4 @@ public class SsaToRop {
 
         return result;
     }
-
-    /**
-     * <b>Note:</b> This method is not presently used.
-     *
-     * @return a list of registers ordered by most-frequently-used to
-     * least-frequently-used. Each register is listed once and only
-     * once.
-     */
-    public int[] getRegistersByFrequency() {
-        int regCount = ssaMeth.getRegCount();
-        Integer[] ret = new Integer[regCount];
-
-        for (int i = 0; i < regCount; i++) {
-            ret[i] = i;
-        }
-
-        Arrays.sort(ret, new Comparator<Integer>() {
-            public int compare(Integer o1, Integer o2) {
-                return ssaMeth.getUseListForRegister(o2).size()
-                        - ssaMeth.getUseListForRegister(o1).size();
-            }
-        });
-
-        int result[] = new int[regCount];
-
-        for (int i = 0; i < regCount; i++) {
-            result[i] = ret[i];
-        }
-
-        return result;
-    }
 }

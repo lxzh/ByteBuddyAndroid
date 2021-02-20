@@ -34,35 +34,35 @@ public interface ClassFile extends HasAttribute {
      *
      * @return the value in question
      */
-    public int getMagic();
+    int getMagic();
 
     /**
      * Gets the field {@code minor_version}.
      *
      * @return the value in question
      */
-    public int getMinorVersion();
+    int getMinorVersion();
 
     /**
      * Gets the field {@code major_version}.
      *
      * @return the value in question
      */
-    public int getMajorVersion();
+    int getMajorVersion();
 
     /**
      * Gets the field {@code access_flags}.
      *
      * @return the value in question
      */
-    public int getAccessFlags();
+    int getAccessFlags();
 
     /**
      * Gets the field {@code this_class}, interpreted as a type constant.
      *
      * @return {@code non-null;} the value in question
      */
-    public CstType getThisClass();
+    CstType getThisClass();
 
     /**
      * Gets the field {@code super_class}, interpreted as a type constant
@@ -70,7 +70,7 @@ public interface ClassFile extends HasAttribute {
      *
      * @return {@code null-ok;} the value in question
      */
-    public CstType getSuperclass();
+    CstType getSuperclass();
 
     /**
      * Gets the field {@code constant_pool} (along with
@@ -78,7 +78,7 @@ public interface ClassFile extends HasAttribute {
      *
      * @return {@code non-null;} the constant pool
      */
-    public ConstantPool getConstantPool();
+    ConstantPool getConstantPool();
 
     /**
      * Gets the field {@code interfaces} (along with
@@ -86,7 +86,7 @@ public interface ClassFile extends HasAttribute {
      *
      * @return {@code non-null;} the list of interfaces
      */
-    public TypeList getInterfaces();
+    TypeList getInterfaces();
 
     /**
      * Gets the field {@code fields} (along with
@@ -94,7 +94,7 @@ public interface ClassFile extends HasAttribute {
      *
      * @return {@code non-null;} the list of fields
      */
-    public FieldList getFields();
+    FieldList getFields();
 
     /**
      * Gets the field {@code methods} (along with
@@ -102,7 +102,7 @@ public interface ClassFile extends HasAttribute {
      *
      * @return {@code non-null;} the list of fields
      */
-    public MethodList getMethods();
+    MethodList getMethods();
 
     /**
      * Gets the field {@code attributes} (along with
@@ -110,7 +110,7 @@ public interface ClassFile extends HasAttribute {
      *
      * @return {@code non-null;} the list of attributes
      */
-    public AttributeList getAttributes();
+    AttributeList getAttributes();
 
     /**
      * Gets the name out of the {@code SourceFile} attribute of this
@@ -119,5 +119,5 @@ public interface ClassFile extends HasAttribute {
      *
      * @return {@code non-null;} the constant pool
      */
-    public CstString getSourceFile();
+    CstString getSourceFile();
 }

@@ -134,31 +134,4 @@ public final class CodeStatistics {
 
         runningTotalInsns += newCountInsns;
     }
-
-    /**
-     * Prints out the collected statistics.
-     *
-     * @param out {@code non-null;} where to output to
-     */
-    public void dumpStatistics(PrintStream out) {
-        out.printf("Optimizer Delta Rop Insns: %d total: %d "
-                + "(%.2f%%) Delta Registers: %d\n",
-                runningDeltaInsns,
-                runningTotalInsns,
-                (100.0 * (((float) runningDeltaInsns)
-                        / (runningTotalInsns + Math.abs(runningDeltaInsns)))),
-                runningDeltaRegisters);
-
-        out.printf("Optimizer Delta Dex Insns: Insns: %d total: %d "
-                + "(%.2f%%) Delta Registers: %d\n",
-                dexRunningDeltaInsns,
-                dexRunningTotalInsns,
-                (100.0 * (((float) dexRunningDeltaInsns)
-                        / (dexRunningTotalInsns
-                                + Math.abs(dexRunningDeltaInsns)))),
-                dexRunningDeltaRegisters);
-
-        out.printf("Original bytecode byte count: %d\n",
-                runningOriginalBytes);
-    }
 }

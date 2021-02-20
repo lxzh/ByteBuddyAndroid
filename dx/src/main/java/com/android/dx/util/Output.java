@@ -30,7 +30,7 @@ public interface Output extends ByteOutput {
      *
      * @return {@code >= 0;} the cursor position
      */
-    public int getCursor();
+    int getCursor();
 
     /**
      * Asserts that the cursor is the given value.
@@ -39,35 +39,35 @@ public interface Output extends ByteOutput {
      * @throws RuntimeException thrown if {@code getCursor() !=
      * expectedCursor}
      */
-    public void assertCursor(int expectedCursor);
+    void assertCursor(int expectedCursor);
 
     /**
      * Writes a {@code byte} to this instance.
      *
      * @param value the value to write; all but the low 8 bits are ignored
      */
-    public void writeByte(int value);
+    void writeByte(int value);
 
     /**
      * Writes a {@code short} to this instance.
      *
      * @param value the value to write; all but the low 16 bits are ignored
      */
-    public void writeShort(int value);
+    void writeShort(int value);
 
     /**
      * Writes an {@code int} to this instance.
      *
      * @param value the value to write
      */
-    public void writeInt(int value);
+    void writeInt(int value);
 
     /**
      * Writes a {@code long} to this instance.
      *
      * @param value the value to write
      */
-    public void writeLong(long value);
+    void writeLong(long value);
 
     /**
      * Writes a DWARFv3-style unsigned LEB128 integer. For details,
@@ -77,7 +77,7 @@ public interface Output extends ByteOutput {
      * @param value value to write, treated as an unsigned value
      * @return {@code 1..5;} the number of bytes actually written
      */
-    public int writeUleb128(int value);
+    int writeUleb128(int value);
 
     /**
      * Writes a DWARFv3-style unsigned LEB128 integer. For details,
@@ -87,14 +87,14 @@ public interface Output extends ByteOutput {
      * @param value value to write
      * @return {@code 1..5;} the number of bytes actually written
      */
-    public int writeSleb128(int value);
+    int writeSleb128(int value);
 
     /**
      * Writes a {@link ByteArray} to this instance.
      *
      * @param bytes {@code non-null;} the array to write
      */
-    public void write(ByteArray bytes);
+    void write(ByteArray bytes);
 
     /**
      * Writes a portion of a {@code byte[]} to this instance.
@@ -104,7 +104,7 @@ public interface Output extends ByteOutput {
      * byte to write
      * @param length {@code >= 0;} number of bytes to write
      */
-    public void write(byte[] bytes, int offset, int length);
+    void write(byte[] bytes, int offset, int length);
 
     /**
      * Writes a {@code byte[]} to this instance. This is just
@@ -112,14 +112,14 @@ public interface Output extends ByteOutput {
      *
      * @param bytes {@code non-null;} the array to write
      */
-    public void write(byte[] bytes);
+    void write(byte[] bytes);
 
     /**
      * Writes the given number of {@code 0} bytes.
      *
      * @param count {@code >= 0;} the number of zeroes to write
      */
-    public void writeZeroes(int count);
+    void writeZeroes(int count);
 
     /**
      * Adds extra bytes if necessary (with value {@code 0}) to
@@ -127,5 +127,5 @@ public interface Output extends ByteOutput {
      *
      * @param alignment {@code > 0;} the alignment; must be a power of two
      */
-    public void alignTo(int alignment);
+    void alignTo(int alignment);
 }

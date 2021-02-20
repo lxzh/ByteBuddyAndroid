@@ -1173,7 +1173,7 @@ public final class BytecodeArray {
          * @param offset offset to the instruction
          * @param length length of the instruction, in bytes
          */
-        public void visitInvalid(int opcode, int offset, int length);
+        void visitInvalid(int opcode, int offset, int length);
 
         /**
          * Visits an instruction which has no inline arguments
@@ -1184,8 +1184,8 @@ public final class BytecodeArray {
          * @param length length of the instruction, in bytes
          * @param type {@code non-null;} type the instruction operates on
          */
-        public void visitNoArgs(int opcode, int offset, int length,
-                Type type);
+        void visitNoArgs(int opcode, int offset, int length,
+                         Type type);
 
         /**
          * Visits an instruction which has a local variable index argument.
@@ -1198,8 +1198,8 @@ public final class BytecodeArray {
          * @param value additional literal integer argument, if salient (i.e.,
          * for {@code iinc})
          */
-        public void visitLocal(int opcode, int offset, int length,
-                int idx, Type type, int value);
+        void visitLocal(int opcode, int offset, int length,
+                        int idx, Type type, int value);
 
         /**
          * Visits an instruction which has a (possibly synthetic)
@@ -1225,8 +1225,8 @@ public final class BytecodeArray {
          * @param value additional literal integer argument, if salient
          * (ignore if not)
          */
-        public void visitConstant(int opcode, int offset, int length,
-                Constant cst, int value);
+        void visitConstant(int opcode, int offset, int length,
+                           Constant cst, int value);
 
         /**
          * Visits an instruction which has a branch target argument.
@@ -1236,8 +1236,8 @@ public final class BytecodeArray {
          * @param length length of the instruction, in bytes
          * @param target the absolute (not relative) branch target
          */
-        public void visitBranch(int opcode, int offset, int length,
-                int target);
+        void visitBranch(int opcode, int offset, int length,
+                         int target);
 
         /**
          * Visits a switch instruction.
@@ -1250,8 +1250,8 @@ public final class BytecodeArray {
          * @param padding the bytes found in the padding area (if any),
          * packed
          */
-        public void visitSwitch(int opcode, int offset, int length,
-                SwitchList cases, int padding);
+        void visitSwitch(int opcode, int offset, int length,
+                         SwitchList cases, int padding);
 
         /**
          * Visits a newarray instruction.
@@ -1262,20 +1262,20 @@ public final class BytecodeArray {
          * @param initVals {@code non-null;} list of bytecode offsets
          * for init values
          */
-        public void visitNewarray(int offset, int length, CstType type,
-                ArrayList<Constant> initVals);
+        void visitNewarray(int offset, int length, CstType type,
+                           ArrayList<Constant> initVals);
 
         /**
          * Set previous bytecode offset
          * @param offset    offset of the previous fully parsed bytecode
          */
-        public void setPreviousOffset(int offset);
+        void setPreviousOffset(int offset);
 
         /**
          * Get previous bytecode offset
          * @return return the recored offset of the previous bytecode
          */
-        public int getPreviousOffset();
+        int getPreviousOffset();
     }
 
     /**

@@ -135,9 +135,7 @@ public final class OutputFinisher {
             }
         } else if (insn instanceof LocalStart) {
             RegisterSpec spec = ((LocalStart) insn).getLocal();
-            if (hasLocalInfo(spec)) {
-                return true;
-            }
+            return hasLocalInfo(spec);
         }
 
         return false;

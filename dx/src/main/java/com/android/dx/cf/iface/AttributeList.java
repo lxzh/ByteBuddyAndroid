@@ -28,14 +28,14 @@ public interface AttributeList {
      *
      * @return {@code true} iff this instance is somehow mutable
      */
-    public boolean isMutable();
+    boolean isMutable();
 
     /**
      * Get the number of attributes in the list.
      *
      * @return the size
      */
-    public int size();
+    int size();
 
     /**
      * Get the {@code n}th attribute.
@@ -43,7 +43,7 @@ public interface AttributeList {
      * @param n {@code n >= 0, n < size();} which attribute
      * @return {@code non-null;} the attribute in question
      */
-    public Attribute get(int n);
+    Attribute get(int n);
 
     /**
      * Get the total length of this list in bytes, when part of a
@@ -52,7 +52,7 @@ public interface AttributeList {
      *
      * @return {@code >= 2;} the total length, in bytes
      */
-    public int byteLength();
+    int byteLength();
 
     /**
      * Get the first attribute in the list with the given name, if any.
@@ -61,7 +61,7 @@ public interface AttributeList {
      * @return {@code null-ok;} first attribute in the list with the given name,
      * or {@code null} if there is none
      */
-    public Attribute findFirst(String name);
+    Attribute findFirst(String name);
 
     /**
      * Get the next attribute in the list after the given one, with the same
@@ -71,5 +71,5 @@ public interface AttributeList {
      * @return {@code null-ok;} next attribute after {@code attrib} with the
      * same name as {@code attrib}
      */
-    public Attribute findNext(Attribute attrib);
+    Attribute findNext(Attribute attrib);
 }

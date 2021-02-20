@@ -58,12 +58,8 @@ public final class Form30t extends InsnFormat {
     /** {@inheritDoc} */
     @Override
     public boolean isCompatible(DalvInsn insn) {
-        if (!((insn instanceof TargetInsn) &&
-              (insn.getRegisters().size() == 0))) {
-            return false;
-        }
-
-        return true;
+        return (insn instanceof TargetInsn) &&
+                (insn.getRegisters().size() == 0);
     }
 
     /** {@inheritDoc} */

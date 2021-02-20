@@ -60,7 +60,7 @@ public final class FieldIdsSection extends MemberIdsSection {
 
         throwIfNotPrepared();
 
-        IndexedItem result = fieldIds.get((CstFieldRef) cst);
+        IndexedItem result = fieldIds.get(cst);
 
         if (result == null) {
             throw new IllegalArgumentException("not found");

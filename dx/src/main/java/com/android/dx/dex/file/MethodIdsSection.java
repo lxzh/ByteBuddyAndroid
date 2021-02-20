@@ -60,7 +60,7 @@ public final class MethodIdsSection extends MemberIdsSection {
 
         throwIfNotPrepared();
 
-        IndexedItem result = methodIds.get((CstBaseMethodRef) cst);
+        IndexedItem result = methodIds.get(cst);
 
         if (result == null) {
             throw new IllegalArgumentException("not found");

@@ -87,7 +87,7 @@ public final class LocalList extends FixedSizeList {
     /**
      * Disposition of a local entry.
      */
-    public static enum Disposition {
+    public enum Disposition {
         /** local started (introduced) */
         START,
 
@@ -110,7 +110,7 @@ public final class LocalList extends FixedSizeList {
          * local ended because the next local clobbered this one
          * (because this one is a category-2)
          */
-        END_CLOBBERED_BY_NEXT;
+        END_CLOBBERED_BY_NEXT
     }
 
     /**
@@ -467,7 +467,7 @@ public final class LocalList extends FixedSizeList {
         private int[] endIndices;
 
         /** {@code >= 0;} last address seen */
-        private int lastAddress;
+        private final int lastAddress;
 
         /**
          * Constructs an instance.

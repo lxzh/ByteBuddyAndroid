@@ -72,7 +72,7 @@ public final class Form22t extends InsnFormat {
         }
 
         TargetInsn ti = (TargetInsn) insn;
-        return ti.hasTargetOffset() ? branchFits(ti) : true;
+        return !ti.hasTargetOffset() || branchFits(ti);
     }
 
     /** {@inheritDoc} */

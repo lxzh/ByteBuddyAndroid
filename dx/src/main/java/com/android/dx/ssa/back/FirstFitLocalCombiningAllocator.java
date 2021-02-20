@@ -857,7 +857,7 @@ public class FirstFitLocalCombiningAllocator extends RegisterAllocator {
         RegisterSpecList sources = insn.getSources();
         int szSources = sources.size();
         // the category for each source index
-        int categoriesForIndex[] = new int[szSources];
+        int[] categoriesForIndex = new int[szSources];
         int rangeLength = 0;
 
         // Compute rangeLength and categoriesForIndex

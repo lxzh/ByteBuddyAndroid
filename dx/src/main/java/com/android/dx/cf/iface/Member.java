@@ -29,14 +29,14 @@ public interface Member extends HasAttribute {
      *
      * @return {@code non-null;} the defining class
      */
-    public CstType getDefiningClass();
+    CstType getDefiningClass();
 
     /**
      * Get the field {@code access_flags}.
      *
      * @return the access flags
      */
-    public int getAccessFlags();
+    int getAccessFlags();
 
     /**
      * Get the field {@code name_index} of the member. This is
@@ -44,7 +44,7 @@ public interface Member extends HasAttribute {
      *
      * @return {@code non-null;} the name
      */
-    public CstString getName();
+    CstString getName();
 
     /**
      * Get the field {@code descriptor_index} of the member. This is
@@ -52,7 +52,7 @@ public interface Member extends HasAttribute {
      *
      * @return {@code non-null;} the descriptor
      */
-    public CstString getDescriptor();
+    CstString getDescriptor();
 
     /**
      * Get the name and type associated with this member. This is a
@@ -62,7 +62,7 @@ public interface Member extends HasAttribute {
      *
      * @return {@code non-null;} the name and type
      */
-    public CstNat getNat();
+    CstNat getNat();
 
     /**
      * Get the field {@code attributes} (along with
@@ -70,5 +70,5 @@ public interface Member extends HasAttribute {
      *
      * @return {@code non-null;} the constant pool
      */
-    public AttributeList getAttributes();
+    AttributeList getAttributes();
 }

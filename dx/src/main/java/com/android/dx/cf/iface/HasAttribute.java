@@ -27,6 +27,6 @@ public interface HasAttribute {
      *
      * @return {@code non-null;} the attributes list
      */
-    public AttributeList getAttributes();
+    AttributeList getAttributes();
 
 }

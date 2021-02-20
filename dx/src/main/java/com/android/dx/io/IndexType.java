@@ -54,5 +54,5 @@ public enum IndexType {
     VTABLE_OFFSET,
 
     /** direct field offset (for static linked field accesses) */
-    FIELD_OFFSET;
+    FIELD_OFFSET
 }

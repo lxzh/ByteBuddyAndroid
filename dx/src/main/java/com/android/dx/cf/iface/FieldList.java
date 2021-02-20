@@ -29,14 +29,14 @@ public interface FieldList
      *
      * @return {@code true} iff this instance is somehow mutable
      */
-    public boolean isMutable();
+    boolean isMutable();
 
     /**
      * Get the number of fields in the list.
      *
      * @return the size
      */
-    public int size();
+    int size();
 
     /**
      * Get the {@code n}th field.
@@ -44,5 +44,5 @@ public interface FieldList
      * @param n {@code n >= 0, n < size();} which field
      * @return {@code non-null;} the field in question
      */
-    public Field get(int n);
+    Field get(int n);
 }

@@ -1291,7 +1291,7 @@ public final class Rops {
      */
     public static Rop opMoveException(TypeBearer type) {
         return new Rop(RegOps.MOVE_EXCEPTION, type.getType(),
-                       StdTypeList.EMPTY, (String) null);
+                       StdTypeList.EMPTY, null);
     }
 
     /**
@@ -1303,7 +1303,7 @@ public final class Rops {
      */
     public static Rop opMoveResult(TypeBearer type) {
         return new Rop(RegOps.MOVE_RESULT, type.getType(),
-                       StdTypeList.EMPTY, (String) null);
+                       StdTypeList.EMPTY, null);
     }
 
     /**
@@ -1315,7 +1315,7 @@ public final class Rops {
      */
     public static Rop opMoveResultPseudo(TypeBearer type) {
         return new Rop(RegOps.MOVE_RESULT_PSEUDO, type.getType(),
-                       StdTypeList.EMPTY, (String) null);
+                       StdTypeList.EMPTY, null);
     }
 
     /**

@@ -211,7 +211,7 @@ public final class Type implements TypeBearer, Comparable<Type> {
     public static final Type DOUBLE_ARRAY = new Type("[" + DOUBLE.descriptor, BT_OBJECT);
 
     /** {@code non-null;} instance representing {@code float[]} */
-    public static final Type FLOAT_ARRAY = new Type("[" + FLOAT.descriptor, BT_OBJECT);;
+    public static final Type FLOAT_ARRAY = new Type("[" + FLOAT.descriptor, BT_OBJECT);
 
     /** {@code non-null;} instance representing {@code int[]} */
     public static final Type INT_ARRAY = new Type("[" + INT.descriptor, BT_OBJECT);

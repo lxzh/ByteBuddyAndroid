@@ -61,7 +61,7 @@ public final class StringIdsSection
 
         throwIfNotPrepared();
 
-        IndexedItem result = strings.get((CstString) cst);
+        IndexedItem result = strings.get(cst);
 
         if (result == null) {
             throw new IllegalArgumentException("not found");
