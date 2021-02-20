@@ -1,3 +1,4 @@
+include ':dx'
 include ':byte-buddy-android'
 include ':byte-buddy'
 include ':app'

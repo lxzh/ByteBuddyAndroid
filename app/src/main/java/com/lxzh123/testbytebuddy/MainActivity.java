@@ -3,6 +3,8 @@ package com.lxzh123.testbytebuddy;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -29,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        String pkgName = getPackageName();
+        PackageInfo pkgInfo = null;
+        try {
+            pkgInfo = getPackageManager().getPackageInfo(pkgName, PackageManager.GET_ACTIVITIES);
+            Log.i(TAG, "packageName test before hook:" + pkgInfo.packageName);
+        } catch (Exception e) {
+
+        }
         Object objectOriginal = new String("Hahaha");
 
         test = new Test();
@@ -100,6 +110,8 @@ public class MainActivity extends AppCompatActivity {
         }
         Log.i(TAG, "getPackageName test:" + this.getPackageName());
         Log.i(TAG, "getPackageCodePath test:" + this.getPackageCodePath());
+        Log.i(TAG, "packageName test:" + pkgInfo.packageName);
+
     }
 
     public static class Interceptor {

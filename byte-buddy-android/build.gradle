@@ -18,6 +18,10 @@ android {
 
     buildTypes {
         release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -35,6 +39,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.jakewharton.android.repackaged:dalvik-dx:1'
+//    implementation 'com.jakewharton.android.repackaged:dalvik-dx:1'
     api project(path: ':byte-buddy')
+    implementation project(path: ':dx')
 }
