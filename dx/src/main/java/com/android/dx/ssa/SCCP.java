@@ -223,15 +223,6 @@ public class SCCP {
         }
     }
 
-    private static String latticeValName(int latticeVal) {
-        switch (latticeVal) {
-            case TOP: return "TOP";
-            case CONSTANT: return "CONSTANT";
-            case VARYING: return "VARYING";
-            default: return "UNKNOWN";
-        }
-    }
-
     /**
      * Simulates branch insns, if possible. Adds reachable successor blocks
      * to the CFG worklists.

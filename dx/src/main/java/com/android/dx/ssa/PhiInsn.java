@@ -245,25 +245,6 @@ public final class PhiInsn extends SsaInsn {
         return false;
     }
 
-    /**
-     * @return true if all operands use the same register
-     */
-    public boolean areAllOperandsEqual() {
-        if (operands.size() == 0 ) {
-            // This should never happen.
-            return true;
-        }
-
-        int firstReg = operands.get(0).regSpec.getReg();
-        for (Operand o : operands) {
-            if (firstReg != o.regSpec.getReg()) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
     /** {@inheritDoc} */
     @Override
     public final void mapSourceRegisters(RegisterMapper mapper) {

@@ -730,18 +730,6 @@ public final class SsaMethod {
     }
 
     /**
-     * Visits each phi insn in this method
-     * @param v {@code non-null;} callback.
-     *
-     */
-    public void forEachPhiInsn(PhiInsn.Visitor v) {
-        for (SsaBasicBlock block : blocks) {
-            block.forEachPhiInsn(v);
-        }
-    }
-
-
-    /**
      * Walks the basic block tree in depth-first order, calling the visitor
      * method once for every block. This depth-first walk may be run forward
      * from the method entry point or backwards from the method exit points.

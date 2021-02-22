@@ -18,7 +18,6 @@ package com.android.dx.ssa;
 
 import com.android.dx.rop.code.RopMethod;
 import com.android.dx.rop.code.TranslationAdvice;
-import com.android.dx.ssa.back.LivenessAnalyzer;
 import com.android.dx.ssa.back.SsaToRop;
 import java.util.EnumSet;
 
@@ -189,68 +188,5 @@ public class Optimizer {
         }
 
         PhiTypeResolver.process(ssaMeth);
-    }
-
-    public static SsaMethod debugEdgeSplit(RopMethod rmeth, int paramWidth,
-            boolean isStatic, boolean inPreserveLocals,
-            TranslationAdvice inAdvice) {
-
-        preserveLocals = inPreserveLocals;
-        advice = inAdvice;
-
-        return SsaConverter.testEdgeSplit(rmeth, paramWidth, isStatic);
-    }
-
-    public static SsaMethod debugPhiPlacement(RopMethod rmeth, int paramWidth,
-            boolean isStatic, boolean inPreserveLocals,
-            TranslationAdvice inAdvice) {
-
-        preserveLocals = inPreserveLocals;
-        advice = inAdvice;
-
-        return SsaConverter.testPhiPlacement(rmeth, paramWidth, isStatic);
-    }
-
-    public static SsaMethod debugRenaming(RopMethod rmeth, int paramWidth,
-            boolean isStatic, boolean inPreserveLocals,
-            TranslationAdvice inAdvice) {
-
-        preserveLocals = inPreserveLocals;
-        advice = inAdvice;
-
-        return SsaConverter.convertToSsaMethod(rmeth, paramWidth, isStatic);
-    }
-
-    public static SsaMethod debugDeadCodeRemover(RopMethod rmeth,
-            int paramWidth, boolean isStatic, boolean inPreserveLocals,
-            TranslationAdvice inAdvice) {
-
-        SsaMethod ssaMeth;
-
-        preserveLocals = inPreserveLocals;
-        advice = inAdvice;
-
-        ssaMeth = SsaConverter.convertToSsaMethod(rmeth, paramWidth, isStatic);
-        DeadCodeRemover.process(ssaMeth);
-
-        return ssaMeth;
-    }
-
-    public static SsaMethod debugNoRegisterAllocation(RopMethod rmeth,
-            int paramWidth, boolean isStatic, boolean inPreserveLocals,
-            TranslationAdvice inAdvice, EnumSet<OptionalStep> steps) {
-
-        SsaMethod ssaMeth;
-
-        preserveLocals = inPreserveLocals;
-        advice = inAdvice;
-
-        ssaMeth = SsaConverter.convertToSsaMethod(rmeth, paramWidth, isStatic);
-
-        runSsaFormSteps(ssaMeth, steps);
-
-        LivenessAnalyzer.constructInterferenceGraph(ssaMeth);
-
-        return ssaMeth;
     }
 }
